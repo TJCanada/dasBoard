@@ -47,7 +47,7 @@ def move(direction, current_block, board):
     if not notmove:
         board[nextBlock["x"]][nextBlock["y"]] = chalk.cyan('o')
         if not direction == "p":
-            board[current_block["x"]][current_block["y"]] = "x" 
+            board[current_block["x"]][current_block["y"]] = "x"
         return nextBlock, board
 
     return current_block, board
