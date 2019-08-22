@@ -1,17 +1,30 @@
-from qwerty import *
-n = int(input("what number is N\n"))
-k = int(input("what number is K\n"))
-char = input("what character is Char\n")
-print("\n")
+# import chalk
 
 
-q = blah(n,k, char)
+def strToArr(string):
+    array = []
+    for character in string:
+        array.append(character)
+    return array
 
 
-cb = [0,1]
-while(True):
-    meh = input("direction")
-    if meh == "right":
-        cb[0]+= 1 
-        q[cb[0]][cb[1]] = 0
-        print(q)
+def load_board(fn):
+    with open(fn) as txt:
+        rows = txt.readlines()
+        board = []
+
+        for row in rows:
+            str = row[:-1]
+            ar = strToArr(str)
+            board.append(ar)
+    return board
+
+    # what is fn,
+
+
+def make_board(x, y, char):
+    return [[char]*x for _ in range(y)]
+
+
+def pretty_print_board(board):
+    print("\n".join(["".join(row) for row in board]))
